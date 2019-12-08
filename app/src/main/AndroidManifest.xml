@@ -78,6 +78,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
+        <!-- RG>> Commenting out SMS receiver
         <receiver
             android:name=".SMSReceiver"
             android:enabled="true"
@@ -86,7 +87,7 @@
                 <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
             </intent-filter>
         </receiver>
-
+        -->
         <activity android:name=".LoggingActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
