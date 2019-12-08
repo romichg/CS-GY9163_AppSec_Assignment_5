@@ -2,7 +2,7 @@ package edu.nyu.appsec.assignment5;
 
 //import android.Manifest;
 //import android.content.Context;
-//import android.content.Intent;
+import android.content.Intent;
 //import android.content.pm.PackageManager;
 //import android.location.Location;
 //import android.location.LocationListener;
@@ -14,7 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 //import android.webkit.SslErrorHandler;
 import android.webkit.WebResourceRequest;
-//import android.webkit.WebSettings;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -99,10 +99,10 @@ public class MainActivity extends AppCompatActivity {
         WebView view = new WebView(this);
         view.setWebViewClient(new MyWebViewClient());
 
-        // WebSettings settings = view.getSettings(); RG>> And since we commented out all below, we don't need this
-        // settings.setAllowFileAccessFromFileURLs(true); RG>> No need to allow file access
-        // settings.setJavaScriptEnabled(true); RG>> No need for java script. There is no JS in our pages
-        // settings.setAllowUniversalAccessFromFileURLs(true); RG >> No need for file access
+        WebSettings settings = view.getSettings();
+        //settings.setAllowFileAccessFromFileURLs(true); //RG>> No need to allow file access
+        settings.setJavaScriptEnabled(true); //RG>> turns out we need JS for hamburger menu..
+        //settings.setAllowUniversalAccessFromFileURLs(true); //RG >> No need for file access
 
         /* RG>> There is no need for the spying location service.. naughty
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
